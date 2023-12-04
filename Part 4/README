@@ -1,0 +1,47 @@
+README
+
+	IRWA-2023-part-4
+	Ranking
+
+	Martina Tarrés - 242828
+	Edith Ruiz - 242324
+	Montserrat Sumoy - 241061
+
+	This document provides detailed instructions on how to run the Part 4 of our IRWA project.
+
+	o How to run the code
+	
+	This code is written in python hence it must be executed in any pyhton-supported workframes. As a reference, we have done ourproject in Visual Studio Code
+
+	Our project is based on the following files of data: Rus_Ukr_war_data.json.
+
+  o To download this repository locally open a terminal console and execute:
+
+  ```
+  cd <your preferred projects root directory>
+  
+  ```
+
+  o To run the web app --> python web_app.py
+  o The following information will appear in the terminal:
+
+    * Serving Flask app 'web_app', 
+    * Debug mode: on
+        WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+    * Running on all addresses (0.0.0.0)
+    * Running on http://127.0.0.1:8088
+    * Running on http://192.168.1.232:8088
+
+  o Open the web app in your Browser by clicking on of the above links
+
+  o Some installs may be needed such as:
+
+    * pip install httpagentparser
+    * pip install Flask pandas nltk faker
+    * pip3 install virtualenv
+
+  
+
+  
+
+	
