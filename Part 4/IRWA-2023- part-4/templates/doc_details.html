@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# Using Bootstrap v4.6.1 #}
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/custom.css') }}">
+    <title>{% block page_title %}{% endblock %} - Document Detail - IRWA Search Engine</title>
+    {% block header %}{% endblock %}
+</head>
+<body>
+<div class="container">
+    <div class='header text-center'>
+        <a href="/">
+            <img src="{{ url_for('static', filename='logo.png') }}" width="100" alt="UPF logo"/>
+        </a>
+        <span> Document Details </span>
+    </div>
+    <hr>
+    <div class='content'>
+        {% block content %}
+        <div class='text-center'>
+            <div><a href="#" onclick="history.go(-1)">Go Back</a></div>
+             <a href="#" onclick="history.go(-2)">Go Back 2 pages | </a>
+             <a href="#" onclick="history.go(-3)">Go Back 3 pages | </a>
+             <a href="#" onclick="history.go(-4)">Go Back 4 pages | </a>
+             <a href="/stats" >Stats | </a>
+             <a href="/dashboard" >Dashboard</a>
+        </div>
+        
+        <div><b>Id: </b> {{item.id}}</div>
+        <div><b>Description: </b> {{item.description}}</div>
+        <div><b>Date: </b> {{item.doc_date}}</div>
+        <div><b>Likes: </b> {{item.likes}}</div>
+        <div><b>Retweets: </b> {{item.retweets}}</div>
+        <div><b>Hashtags: </b> {{item.hashtags}}</div>
+        <div><b>Url: </b> {{item.url}}</div>
+        {% endblock %}
+    </div>
+    <hr>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
