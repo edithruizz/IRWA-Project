@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block page_title %}{{ page_title }}{% endblock %}
+{% block content %}
+    <h2>Quick Stats</h2>
+    <h4>Clicked docs:</h4>
+
+    {% for doc in clicks_data %}
+        <div class="pb-3">
+            <div class="">
+                <span class="text-dark"> <b>Visits:</b> {{ doc.count }} <br>
+                    <b>Queries related:</b> {{ doc.queries_related }} <br>
+                    <b>Top 10?:</b> {{ doc.is_top10 }} <br>
+                    <b>Dwell time:</b> {{ doc.dwell_time }} seconds <br>
+                    <b>Id:</b> {{ doc.id }} <br>{{ doc.description }}<br/>
+                </span> 
+            </div>
+        </div>
+    {% endfor %}
+    <hr><hr/>
+    
+    <h4>Requested queries:</h4>
+    {% for query in searched_queries %}
+        <div class="pb-3">
+            <div class="">
+                <span class="text-dark"> <b>Query:</b> {{ query.query }}
+                <b>Length:</b> {{ query.length }}
+                <b>Times searched:</b> {{ query.times_searched }}
+                </span> 
+                
+            </div>
+        </div>
+    {% endfor %}
+    <hr><hr/>
+    
+    <h4>Sessions information:</h4>
+        <div class="pb-3">
+            <div class="">
+                <span class="text-dark"> <b>Browsers:</b> {{ session_data.browsers }}
+                <br><b>Operating Systems:</b> {{ session_data.OSs }}
+                <br><b>Ips:</b> {{ session_data.ips }}
+                <br><b>Times:</b> {{ session_data.times }}     
+                <br><b>Dates:</b> {{ session_data.dates }}     
+                <br><b>Number of searches by session:</b> {{ session_data.num_searches }}     
+                <br><b>Number clicked docs by session:</b> {{ session_data.num_doc_details }}     
+                </span> 
+                
+            </div>
+        </div>
+   
+{% endblock %}
